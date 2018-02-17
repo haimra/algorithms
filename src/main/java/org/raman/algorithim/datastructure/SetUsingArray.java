@@ -1,83 +1,68 @@
 package org.raman.algorithim.datastructure;
 
+import java.lang.reflect.Array;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.*;
 
 /**
  * Set is an abstract data type that can store certain values, without any particular order, and no repeated values.
- *
+ * This is a naive implantation of a set using backing array;
  */
-public class SetUsingArray<T> implements Set<T>{
-    private String[] array = new String[10];
+public class SetUsingArray<T> {
+    private T[] array;
+    private int headIndex = 0;
+    private int initialCapacity = 10;
 
-    @Override
+    public SetUsingArray() {
+        this.array = (T[]) new Object[initialCapacity];
+    }
+
     public int size() {
-        return 0;
+        return headIndex;
     }
 
-    @Override
     public boolean isEmpty() {
-        return false;
+        return headIndex == 0;
     }
 
-    @Override
-    public boolean contains(Object o) {
-        return false;
-    }
-
-    @Override
-    public Iterator<T> iterator() {
-        return null;
-    }
-
-    @Override
-    public Object[] toArray() {
-        return new Object[0];
-    }
-
-    @Override
-    public <T1> T1[] toArray(T1[] a) {
-        return null;
-    }
-
-    @Override
-    public boolean add(T t) {
-
-        for (int i =0 ; i<array.length; i++){
-            if(t==array[i]) {
+    public boolean contains(T t) {
+        for (int i = 0; i < headIndex + 1; i++) {
+            if (t.equals(array[i])) {
                 return true;
             }
         }
-
         return false;
     }
 
-    @Override
-    public boolean remove(Object o) {
+    public boolean add(T t) {
+        if (!contains(t)) {
+            array[headIndex] = t;
+            headIndex++;
+            return true;
+        }
         return false;
     }
 
-    @Override
-    public boolean containsAll(Collection<?> c) {
+    /*
+    * @return <tt>true</tt> if this set contained the specified element
+    */
+    public boolean remove(T t) {
+        for (int i = 0; i < headIndex + 1; i++) {
+            if (t.equals(array[i])) {
+                removeEmptyCell(i);
+                return true;
+            }
+        }
         return false;
     }
 
-    @Override
-    public boolean addAll(Collection<? extends T> c) {
-        return false;
+    private void removeEmptyCell(int i) {
+        while (i < headIndex) {
+            array[i] = array[i + 1];
+            i++;
+        }
+        headIndex--;
     }
 
-    @Override
-    public boolean retainAll(Collection<?> c) {
-        return false;
-    }
-
-    @Override
-    public boolean removeAll(Collection<?> c) {
-        return false;
-    }
-
-    @Override
-    public void clear() {
-
-    }
 }
