@@ -1,13 +1,14 @@
 package org.raman.algorithim.datastructure;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 /**
- * Created by ramanh3 on 10/02/2018.
+ * Set is an abstract data type that can store certain values, without any particular order, and no repeated values.
+ *
  */
 public class SetUsingArray<T> implements Set<T>{
+    private String[] array = new String[10];
+
     @Override
     public int size() {
         return 0;
@@ -40,6 +41,13 @@ public class SetUsingArray<T> implements Set<T>{
 
     @Override
     public boolean add(T t) {
+
+        for (int i =0 ; i<array.length; i++){
+            if(t==array[i]) {
+                return true;
+            }
+        }
+
         return false;
     }
 
