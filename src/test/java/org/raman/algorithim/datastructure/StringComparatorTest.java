@@ -1,7 +1,5 @@
 package org.raman.algorithim.datastructure;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class StringComparatorTest {
