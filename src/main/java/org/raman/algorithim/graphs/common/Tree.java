@@ -52,9 +52,9 @@ public class Tree<T> {
 	}
 	
 	private int diameterInternal(Node<T> node){
-		int daimLeft = diameterInternal(node.getLeftChild());
+		int diamLeft = diameterInternal(node.getLeftChild());
 		int diamRight = diameterInternal(node.getRightChild());
-		return Math.max(daimLeft, diamRight)+1;		
+		return Math.max(diamLeft, diamRight)+1;
 	}
 	/**
 	 * Display depth first tree traversal string In pre-order

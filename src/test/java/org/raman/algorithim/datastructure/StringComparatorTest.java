@@ -13,7 +13,7 @@ public class StringComparatorTest {
 
 	@Test
 	public void testGetUniqChars() {
-		System.out.println("uniqe "+ new StringComparator(strA, strB).getUniqeChars());
+		System.out.println("uniqe "+ new StringComparator(strA, strB).getUniqueChars());
 	}
 
 }

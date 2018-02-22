@@ -6,12 +6,12 @@ package org.raman.algorithim.general;
  */
 public class Fibonacci {
 
-	public int recorsiveFib(int n) {
+	public int recursiveFib(int n) {
 		if (n == 0)
 			return 0;
 		if (n == 1)
 			return 1;
-		return recorsiveFib(n - 1) + recorsiveFib(n - 2);
+		return recursiveFib(n - 1) + recursiveFib(n - 2);
 	}
 
 	public int iterativeFib(int n) {

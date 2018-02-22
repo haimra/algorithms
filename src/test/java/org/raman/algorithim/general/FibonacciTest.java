@@ -9,12 +9,12 @@ public class FibonacciTest {
 	@Test
 	public void testRecorsiveFib() {
 		Fibonacci fib = new Fibonacci();
-		assertEquals(0,fib.recorsiveFib(0));
-		assertEquals(1,fib.recorsiveFib(1));
-		assertEquals(1,fib.recorsiveFib(2));
-		assertEquals(2,fib.recorsiveFib(3));
-		assertEquals(3,fib.recorsiveFib(4));
-		assertEquals(5,fib.recorsiveFib(5));
+		assertEquals(0,fib.recursiveFib(0));
+		assertEquals(1,fib.recursiveFib(1));
+		assertEquals(1,fib.recursiveFib(2));
+		assertEquals(2,fib.recursiveFib(3));
+		assertEquals(3,fib.recursiveFib(4));
+		assertEquals(5,fib.recursiveFib(5));
 	}
 
 	@Test

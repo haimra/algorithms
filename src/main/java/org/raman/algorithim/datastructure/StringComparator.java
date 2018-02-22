@@ -28,7 +28,7 @@ public class StringComparator {
 		return a;
 	}
 
-	public Set<Character> getUniqeChars() {
+	public Set<Character> getUniqueChars() {
 		Set<Character> a = populateSet(strA);
 		Set<Character> b = populateSet(strB);
 		Set<Character> a1 = populateSet(strA);

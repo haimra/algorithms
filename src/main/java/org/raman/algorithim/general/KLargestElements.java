@@ -4,12 +4,18 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
+ * Question:
  * Write a method where given an unsorted array of integers of size N and an integer K, it finds the K largest
  * integers in the array in an optimal way. 
  * The method can print or return the numbers in any data structure and in any order.ex. 
  * 
  * [5, 8, 4, 9, 9, -1], k = 3
- * return [9, 8, 9] *
+ * return [9, 8, 9]
+ *
+ * The idea of the solution:
+ *
+ * We will use the Heap Data Structure to accive this goal
+ * *
  */
 public class KLargestElements {
 	private Integer[] uarray;
@@ -33,7 +39,7 @@ public class KLargestElements {
 	 */
 	public Integer[] getKlargestSaveSpace(int k){
 		//order k largest from max to min
-		PriorityQueue<Integer> maxHeap = new PriorityQueue<>(k,new IntegerAccendingComparator());		
+		PriorityQueue<Integer> maxHeap = new PriorityQueue<>(k,new IntegerAccendingComparator());
 		//order k largest from min to max
 		PriorityQueue<Integer> minHeap = new PriorityQueue<>(k,new IntegerDecendingComparator());
 		

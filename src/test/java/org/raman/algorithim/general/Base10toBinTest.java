@@ -10,10 +10,10 @@ public class Base10toBinTest {
 	@Test
 	public void testToBinRecorsive() {
 		
-		assertEquals("1000", convertor.toBinRecorsive(8));
-		assertEquals("101", convertor.toBinRecorsive(5));
-		assertEquals("1", convertor.toBinRecorsive(1));
-		assertEquals("0", convertor.toBinRecorsive(0));
+		assertEquals("1000", convertor.toBinRecursive(8));
+		assertEquals("101", convertor.toBinRecursive(5));
+		assertEquals("1", convertor.toBinRecursive(1));
+		assertEquals("0", convertor.toBinRecursive(0));
 		
 	}
 
