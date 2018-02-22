@@ -72,19 +72,16 @@ public class SetUsingArray<T> {
     public boolean remove(Object t) {
         for (int i = 0; i < headIndex + 1; i++) {
             if (t.equals(array[i])) {
-                removeEmptyCell(i);
+                //In set we do not care about order
+                //so we can fill the hole by swapping
+                //last object with the current one
+                array[i] = array[headIndex];
+                array[headIndex] = null;
+                headIndex--;
                 return true;
             }
         }
         return false;
-    }
-
-    private void removeEmptyCell(int i) {
-        while (i < headIndex) {
-            array[i] = array[i + 1];
-            i++;
-        }
-        headIndex--;
     }
 
 }
