@@ -36,8 +36,8 @@ public class TreeTest {
 
 	@Test
 	@Ignore
-	public void testDaimeter() {
-		// daimeter vi the root
+	public void testDiameter() {
+		// diameter vi the root
 		Node<Integer> a = new Node<>(1);
 		Node<Integer> a_1 = new Node<>(2);
 		Node<Integer> a_2 = new Node<>(5);
@@ -55,8 +55,8 @@ public class TreeTest {
 		a_2_1.setRightChild(a_2_1_1);
 
 		Tree<Integer> t = new Tree<>(a);
-		assertEquals("Unexpected daimeter", 6, t.diameter());
-		// daimeter vi a2
+		assertEquals("Unexpected diameter", 6, t.diameter());
+		// diameter vi a2
 		Node<Integer> a_2_2 = new Node<>(8);
 		a_2.setRightChild(a_2_2);
 		Node<Integer> a_2_2_2 = new Node<>(9);
@@ -65,9 +65,9 @@ public class TreeTest {
 		a_2_2_2.setRightChild(a_2_2_2_2);
 		Node<Integer> a_2_2_2_2_2 = new Node<>(11);
 		a_2_2_2_2.setRightChild(a_2_2_2_2_2);
-		assertEquals("Unexpected daimeter", 7, t.diameter());
+		assertEquals("Unexpected diameter", 7, t.diameter());
 		Tree<Integer> t1 = new Tree<>(new Node<>(1));
-		assertEquals("Unexpected daimeter", 1, t1.diameter());
+		assertEquals("Unexpected diameter", 1, t1.diameter());
 
 	}
 
@@ -118,12 +118,12 @@ public class TreeTest {
 	@Test
 	public void testIsSymetric() {
 		Tree<Integer> t1 = new Tree<>(null);
-		assertTrue("Tree is expectd to be symetic",t1.isSymetric());
+		assertTrue("Tree is expected to be symmetric",t1.isSymmetric());
 		
 		t1.setRoot(new Node<Integer>(1));
-		assertTrue("Tree is expectd to be symetic",t1.isSymetric());
-		
-		
+		assertTrue("Tree is expected to be symmetric",t1.isSymmetric());
+
+
 		Node<Integer> b = new Node<>(1);
 		Node<Integer> b_1 = new Node<>(2);
 		Node<Integer> b_2 = new Node<>(2);
@@ -140,12 +140,12 @@ public class TreeTest {
 		b_2.setRightChild(b_2_2);
 
 		Tree<Integer> t = new Tree<>(b);
-		assertTrue("Tree is expectd to be symetic",t.isSymetric());
+		assertTrue("Tree is expected to be symmetric",t.isSymmetric());
 		
 		b_2_2.setData(5);
-		assertTrue("Tree is expectd to be asymetic",!t.isSymetric());
+		assertTrue("Tree is expected to be asymmetric",!t.isSymmetric());
 		b_2.setLeftChild(null);
-		assertTrue("Tree is expectd to be asymetic",!t.isSymetric());
+		assertTrue("Tree is expected to be asymmetric",!t.isSymmetric());
 		System.out.print(t.dfString());
 		
 	}

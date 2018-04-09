@@ -100,20 +100,20 @@ public class Tree<T> {
 		}
 	}
 
-	public boolean isSymetric() {
+	public boolean isSymmetric() {
 		if(null==root) return true;
-		return isSymetricInternal(root.getLeftChild(),root.getRightChild());
+		return isSymmetricInternal(root.getLeftChild(),root.getRightChild());
 	}
 
-	private boolean isSymetricInternal(Node<T> leftChild, Node<T> rightChild) {
+	private boolean isSymmetricInternal(Node<T> leftChild, Node<T> rightChild) {
 		if((leftChild==rightChild)&&leftChild==null) return true;
 		
 		if(leftChild != null && rightChild!=null){
 			if(leftChild.getData().equals(rightChild.getData())){
 			return (
-					isSymetricInternal(leftChild.getLeftChild(),rightChild.getRightChild()) 
+					isSymmetricInternal(leftChild.getLeftChild(),rightChild.getRightChild())
 					&&
-					isSymetricInternal(leftChild.getRightChild(),rightChild.getLeftChild())
+					isSymmetricInternal(leftChild.getRightChild(),rightChild.getLeftChild())
 					);
 			}
 		}

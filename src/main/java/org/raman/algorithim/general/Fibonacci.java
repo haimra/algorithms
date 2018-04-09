@@ -25,4 +25,17 @@ public class Fibonacci {
 		}
 		return fn;
 	}
+
+	//TODO
+	public int optimizedFib(int n) {
+		if (n == 0)
+			return 0;
+		int fn = 0, fnMin1 = 1, i = 0;
+		while (i < n) {
+			fn = fnMin1 + fn;
+			fnMin1 = fn - fnMin1;
+			i++;
+		}
+		return fn;
+	}
 }
