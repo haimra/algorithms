@@ -20,4 +20,5 @@ public class BinarySearchTreeTest {
 		Assert.assertTrue(3==tree.search(3).getData());
 		Assert.assertTrue(null==tree.search(0));
 	}
+
 }

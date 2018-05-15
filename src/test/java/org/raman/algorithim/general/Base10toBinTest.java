@@ -17,4 +17,13 @@ public class Base10toBinTest {
 		
 	}
 
+	@Test
+	public void testToBin() {
+		assertEquals("1000", convertor.toBin(8));
+		assertEquals("101", convertor.toBin(5));
+		assertEquals("1", convertor.toBin(1));
+		assertEquals("0", convertor.toBin(0));
+
+	}
+
 }

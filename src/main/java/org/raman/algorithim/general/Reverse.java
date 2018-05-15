@@ -21,6 +21,20 @@ public class Reverse {
 		return reverse;
 	}
 
+	public String reverseMirror(String str){
+
+		if(str==null)
+			return null;
+		StringBuilder sb = new StringBuilder(str);
+		for(int i = 0;i<str.length()/2;i++){
+			int leftIndex = str.length() - 1 - i;
+			char tmp = sb.charAt(leftIndex);
+			sb.setCharAt(leftIndex,str.charAt(i));
+			sb.setCharAt(i,tmp);
+		}
+		return sb.toString();
+	}
+
 	public String reverseIterativeFor(String str) {
 		if (str == null)
 			return null;
@@ -31,7 +45,7 @@ public class Reverse {
 		return reverse;
 	}
 
-	public String reverseRecorsive(String str) {
+	public String reverseRecursive(String str) {
 		if (str == null)
 			return null;
 		if (str.length() == 0)
@@ -39,7 +53,7 @@ public class Reverse {
 		if (str.length() == 1)
 			return str;
 
-		return reverseRecorsive(str.substring(1, str.length()))
+		return reverseRecursive(str.substring(1, str.length()))
 				+ str.charAt(0);
 	}
 }
